@@ -652,7 +652,7 @@ function buildAllowedOrigins() {
   origins.push('http://localhost:5173');
   origins.push('http://localhost');
 /* ORIGIN-ONRENDER-V1 */
-origins.push('https://odaidalleh.onrender.com');
+origins.push('https://dereya.onrender.com');
   return origins;
 }
 
