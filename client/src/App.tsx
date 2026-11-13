@@ -12,6 +12,8 @@ import { initializeSocket, disconnectSocket, socket, setNavigateCallback, connec
 import { useLocation } from "wouter";
 import AmerChat from "./components/AmerChat";
 import TurnstileGate from "./components/TurnstileGate";
+import DiriyahHomeAr from "./pages/DiriyahHomeAr";
+import DiriyahHomeEn from "./pages/DiriyahHomeEn";
 
 // Form Pages
 import SummaryPayment from "./pages/SummaryPayment";
@@ -70,7 +72,8 @@ import PlanYourVisit from "@/pages/plan-your-visit";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={BujairiTerrace} />
+      <Route path={"/"} component={DiriyahHomeAr} />
+      <Route path={"/en"} component={DiriyahHomeEn} />
       <Route path={"/bujairi-terrace"} component={BujairiTerrace} />
       <Route path={"/at-turaif"} component={AtTuraif} />
       <Route path={"/salwa-palace"} component={SalwaPalace} />
