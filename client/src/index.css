@@ -236,3 +236,8 @@ body:has(.fullscreen-spotlight){--header-height:104px;--header-offset:104px}
 html,body{overflow-x:clip}
 [data-slot="carousel-content"]{cursor:grab}
 [data-slot="carousel-content"]:active{cursor:grabbing}
+
+/* diriyah media tiles: image must fill the square tile on mobile */
+@media (max-width:767px){
+  [data-testid="media-tile-grid"] [data-testid="img"]{height:100%!important;aspect-ratio:auto!important}
+}
