@@ -1,4 +1,4 @@
-﻿const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 6000;
 
 function track(c: HTMLElement) {
   return c.querySelector<HTMLElement>('[data-slot="carousel-content"] > div');
@@ -14,8 +14,10 @@ function go(c: HTMLElement, i: number) {
   const t = track(c);
   if (!t) return;
   const rtl = getComputedStyle(c).direction === "rtl";
+  const gap = parseFloat(getComputedStyle(t).columnGap || "0") || 0;
+  const step = list[0].getBoundingClientRect().width + gap || t.clientWidth;
   t.style.transition = "transform 700ms cubic-bezier(0.22,1,0.36,1)";
-  t.style.transform = "translate3d(" + (rtl ? 1 : -1) * n * 100 + "%,0,0)";
+  t.style.transform = "translate3d(" + (rtl ? 1 : -1) * n * step + "px,0,0)";
   c.querySelectorAll<HTMLElement>("[data-thumb-index]").forEach((b) => {
     b.dataset.active = b.dataset.thumbIndex === String(n) ? "1" : "0";
   });
