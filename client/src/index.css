@@ -203,3 +203,10 @@ html[dir="ltr"] .courses-tabs-header { direction: ltr !important; }
 html[dir="ltr"] .courses-tab-item h6 { direction: ltr !important; }
 html[dir="ltr"] .courses-tab-nav-btn.prev { order: 0 !important; }
 html[dir="ltr"] .courses-tab-nav-btn.next { order: 2 !important; }
+
+/* ==== diriyah static-frame fixes ==== */
+#door-layer,[class*="-mt-[150vh]"]{display:none!important}
+section[class*="h-[250vh]"]{height:100vh!important}
+div[class*="h-[250vh]"]{z-index:5!important}
+img[src*="main-building"]{opacity:1!important}
+.opacity-0,[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important}

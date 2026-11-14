@@ -1,0 +1,147 @@
+[
+  {
+    "id": "richtext_custom",
+    "rte": {
+      "toolbar": {
+        "format": ["bold", "italic", "underline"],
+        "alignment": ["left", "center", "right", "justify"],
+        "blocks": [
+          "paragraph",
+          "h1",
+          "h2",
+          "h3",
+          "body1",
+          "body2",
+          "body3",
+          "body4",
+          "body5",
+          "body6"
+        ],
+        "list": ["bullet_list", "ordered_list"],
+        "indentation": ["indent", "outdent"],
+        "insert": ["link", "unlink", "image", "special_characters"],
+        "history": ["undo", "redo"],
+        "sections": ["format", "alignment", "blocks", "list", "insert", "history"],
+        "editor": ["removeformat", "paste_text"],
+        "sr_script": ["superscript", "subscript"]
+      },
+
+      "actions": {
+        "bold": {
+          "tag": "strong",
+          "shortcut": "Mod-B",
+          "label": "Bold"
+        },
+        "italic": {
+          "tag": "em",
+          "shortcut": "Mod-I"
+        },
+        "underline": {
+          "tag": "u",
+          "shortcut": "Mod-U"
+        },
+        "bullet_list": {
+          "wrapInParagraphs": false,
+          "label": "Bullet List"
+        },
+        "ordered_list": {
+          "wrapInParagraphs": false,
+          "label": "Ordered List"
+        },
+        "indentation": {
+          "scope": "all"
+        },
+        "indent": {
+          "shortcut": "Tab",
+          "label": "Increase Indent"
+        },
+        "outdent": {
+          "shortcut": "Shift-Tab",
+          "label": "Decrease Indent"
+        },
+
+        "link": {
+          "hideTarget": false,
+          "shortcut": "Mod-K",
+          "label": "Add Link"
+        },
+        "unlink": {
+          "label": "Remove Link"
+        },
+
+        "image": {
+          "wrapInPicture": false,
+          "shortcut": "Mod-Shift-I",
+          "label": "Insert Image"
+        },
+
+        "special_characters": {
+          "label": "Special Characters",
+          "appendCharacters": [{ "character": "\u2605", "title": "Black star" }]
+        },
+
+        "undo": {
+          "label": "Undo",
+          "shortcut": "Mod-Z"
+        },
+        "redo": {
+          "label": "Redo",
+          "shortcut": "Mod-Y"
+        },
+
+        "h1": {
+          "shortcut": "Mod-Alt-1",
+          "label": "Heading 1"
+        },
+        "h2": {
+          "shortcut": "Mod-Alt-2",
+          "label": "Heading 2"
+        },
+        "h3": {
+          "shortcut": "Mod-Alt-3",
+          "label": "Heading 3"
+        },
+        "body1": {
+          "tag": "span",
+          "class": "body1",
+          "shortcut": "Mod-Alt-b1",
+          "label": "Body 1"
+        },
+        "body2": {
+          "tag": "span",
+          "class": "body2",
+          "shortcut": "Mod-Alt-b2",
+          "label": "Body 2"
+        },
+        "body3": {
+          "tag": "span",
+          "class": "body3",
+          "shortcut": "Mod-Alt-b3",
+          "label": "Body 3"
+        },
+        "body4": {
+          "tag": "span",
+          "class": "body4",
+          "shortcut": "Mod-Alt-b4",
+          "label": "Body 4"
+        },
+        "body5": {
+          "tag": "span",
+          "class": "body5",
+          "shortcut": "Mod-Alt-b5",
+          "label": "Body 5"
+        },
+        "body6": {
+          "tag": "span",
+          "class": "body6",
+          "shortcut": "Mod-Alt-b6",
+          "label": "Body 6"
+        },
+        "paste_text": {
+          "shortcut": "Mod-Shift-v",
+          "label": "Paste as Text"
+        }
+      }
+    }
+  }
+]
