@@ -95,9 +95,23 @@ function wireButtons() {
   });
 }
 
+function wireTiles() {
+  if (window.innerWidth >= 768) return;
+  document.querySelectorAll<HTMLElement>('[data-testid="media-tile-grid"] [data-testid="cta"] > div').forEach((w) => {
+    w.style.setProperty("aspect-ratio", "1 / 1", "important");
+    w.style.setProperty("height", "auto", "important");
+  });
+  document.querySelectorAll<HTMLElement>('[data-testid="media-tile-grid"] [data-testid="img"]').forEach((d) => {
+    d.style.setProperty("position", "absolute", "important");
+    d.style.setProperty("inset", "0", "important");
+    d.style.setProperty("height", "100%", "important");
+    d.style.setProperty("aspect-ratio", "auto", "important");
+  });
+}
 function wire() {
   wireCarousels();
   wireButtons();
+  wireTiles();
 }
 
 export function initDiriyahBehavior() {
