@@ -21,8 +21,34 @@ function go(c: HTMLElement, i: number) {
   });
 }
 
+function wireDrag(c: HTMLElement) {
+  const el = c.querySelector<HTMLElement>('[data-slot="carousel-content"]');
+  if (!el || el.dataset.drag) return;
+  el.dataset.drag = "1";
+  let sx = 0;
+  let sy = 0;
+  let active = false;
+  el.addEventListener("pointerdown", (e) => {
+    active = true;
+    sx = e.clientX;
+    sy = e.clientY;
+  });
+  el.addEventListener("pointerup", (e) => {
+    if (!active) return;
+    active = false;
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+    go(c, Number(c.dataset.index || 0) + (dx < 0 ? 1 : -1));
+  });
+  el.addEventListener("pointercancel", () => {
+    active = false;
+  });
+}
+
 function wireCarousels() {
   document.querySelectorAll<HTMLElement>('[data-slot="carousel"]').forEach((c) => {
+    wireDrag(c);
     if (c.dataset.wired) return;
     c.dataset.wired = "1";
     c.dataset.index = "0";

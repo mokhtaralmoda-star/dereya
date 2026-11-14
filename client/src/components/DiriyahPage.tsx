@@ -28,6 +28,12 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
           el.href = abs;
           document.head.appendChild(el);
         });
+        if (!document.querySelector('meta[name="viewport"]')) {
+          const mv = document.createElement("meta");
+          mv.name = "viewport";
+          mv.content = "width=device-width, initial-scale=1, viewport-fit=cover";
+          document.head.appendChild(mv);
+        }
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
         document.body.className = doc.body.className;

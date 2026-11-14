@@ -231,3 +231,8 @@ body:has(.fullscreen-spotlight){--header-height:104px;--header-offset:104px}
 [data-thumb-index][data-active="1"]{opacity:1}
 [data-thumb-index][data-active="0"]{opacity:.55}
 [data-slot="carousel"]{touch-action:pan-y}
+
+/* diriyah overflow + drag */
+html,body{overflow-x:clip}
+[data-slot="carousel-content"]{cursor:grab}
+[data-slot="carousel-content"]:active{cursor:grabbing}
