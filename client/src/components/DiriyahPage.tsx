@@ -1,3 +1,4 @@
+import { initDiriyahMobile } from '@/lib/diriyahMobile';
 import { useEffect, useRef, useState } from "react";
 
 export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
@@ -6,6 +7,7 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
   const box = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    initDiriyahMobile();
     let alive = true;
     setHtml("");
     setErr(false);
@@ -39,6 +41,7 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
   }, [lang]);
 
   useEffect(() => {
+    initDiriyahMobile();
     if (!html || !box.current) return;
     box.current.querySelectorAll("script").forEach((old) => { const n = document.createElement("script"); n.textContent = old.textContent; old.replaceWith(n); });
     box.current.querySelectorAll("video").forEach((v) => {
