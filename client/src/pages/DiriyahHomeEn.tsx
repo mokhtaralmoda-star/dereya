@@ -1,5 +1,5 @@
-import LivePage from "@/components/LivePage";
+import DiriyahPage from "@/components/DiriyahPage";
 
 export default function DiriyahHomeEn() {
-  return <LivePage path="/en" />;
+  return <DiriyahPage lang="en" />;
 }
