@@ -29,7 +29,7 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
         document.body.className = doc.body.className;
         if (doc.title) document.title = doc.title;
         const body = doc.body.innerHTML
-          .replace(/<script[\s\S]*?<\/script>/gi, "")
+          
           .replace(/\.\.\/assets\//g, "/diriyah/assets/");
         setHtml(body);
         window.scrollTo(0, 0);
@@ -40,6 +40,7 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
 
   useEffect(() => {
     if (!html || !box.current) return;
+    box.current.querySelectorAll("script").forEach((old) => { const n = document.createElement("script"); n.textContent = old.textContent; old.replaceWith(n); });
     box.current.querySelectorAll("video").forEach((v) => {
       v.setAttribute("autoplay", "");
       v.muted = true;
@@ -49,24 +50,7 @@ export default function DiriyahPage({ lang }: { lang: "ar" | "en" }) {
       v.load();
       v.play().catch(() => {});
     });
-    const onClick = (e: Event) => {
-      const a = (e.target as HTMLElement)?.closest?.("a");
-      if (!a) return;
-      const h = a.getAttribute("href") || "";
-      if (!h || h.charAt(0) === "#") return;
-      e.preventDefault();
-      if (a.getAttribute("data-testid") === "language-switcher-cta") {
-        window.location.href = lang === "ar" ? "/en" : "/";
-        return;
-      }
-      if (h.indexOf("tickets.bujairi.sa") > -1 || (h.indexOf("http") === 0 && h.indexOf("diriyah.sa") === -1)) {
-        window.open(h, "_blank");
-        return;
-      }
-      window.location.href = "/bujairi-terrace";
-    };
-    document.addEventListener("click", onClick, true);
-    return () => document.removeEventListener("click", onClick, true);
+
   }, [html, lang]);
 
   if (err) return <div style={{ padding: 60, textAlign: "center" }}>تعذّر تحميل الصفحة.</div>;
