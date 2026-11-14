@@ -226,3 +226,8 @@ html.menu-open, html.menu-open body { overflow: hidden; }
 
 body:has(.fullscreen-spotlight){--header-height:104px;--header-offset:104px}
 @media (min-width:1024px){body:has(.fullscreen-spotlight){--header-height:211px;--header-offset:211px}}
+
+/* diriyah carousel */
+[data-thumb-index][data-active="1"]{opacity:1}
+[data-thumb-index][data-active="0"]{opacity:.55}
+[data-slot="carousel"]{touch-action:pan-y}
